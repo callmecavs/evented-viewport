@@ -15,12 +15,16 @@
 
       var emitter = Knot()
 
-      emitter.on('resize', cache => console.log(cache))
+      emitter
+        .on('resize', viewport => console.log('width: ' + viewport.width))
+        .on('resize', viewport => console.log('height: ' + viewport.height))
 
-      var instance = EventedViewport({
+      var options = {
         debounce: 250,
         emitter: emitter
-      })
+      }
+
+      var instance = EventedViewport(options)
     </script>
   </body>
 </html>
