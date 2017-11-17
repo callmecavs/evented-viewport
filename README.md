@@ -27,8 +27,8 @@ emitter
 
 // define your options
 const options = {
-  debounce: 250,          // time, in ms, that must pass before updating the viewport width/height on resize
-  emitter                 // object with an "emit" method
+  debounce: 250,      // time, in ms, that must pass before updating the viewport width/height on resize
+  emitter             // object with an "emit" method
 }
 
 // create an instance (should be a singleton)
