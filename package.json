@@ -1,20 +1,20 @@
 {
   "name":        "evented-viewport",
-  "description": "",
+  "description": "Viewport width and height utility for JavaScript modules.",
 
   "main":        "dist/evented-viewport.js",
   "module":      "dist/evented-viewport.module.js",
   "jsnext:main": "dist/evented-viewport.module.js",
 
   "version": "0.0.1",
-  "license": "",
+  "license": "MIT",
 
-  "repository": "",
+  "repository": "callmecavs/evented-viewport",
 
   "author": {
-    "name":  "",
-    "email": "",
-    "url":   ""
+    "name":  "Michael Cavalea",
+    "email": "callmecavs@gmail.com",
+    "url":   "http://callmecavs.com/"
   },
 
   "scripts": {
