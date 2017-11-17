@@ -1,5 +1,5 @@
 const viewport = (options = {}) => {
-  const mustard = options.debounce && options.emitter && options.emitter.emit
+  const mustard = options.debounce && options.emitter && typeof options.emitter.emit === 'function'
 
   if (!mustard) {
     throw new Error('evented-viewport: Invalid options passed in.')
@@ -13,7 +13,7 @@ const viewport = (options = {}) => {
     cache.width = window.innerWidth
     cache.height = window.innerHeight
 
-    emitter.emit('resize', cache)
+    options.emitter.emit('resize', cache)
   }
 
   const resize = () => {
