@@ -8,7 +8,33 @@
 $ npm i evented-viewport --save
 ```
 
-## API
+## Usage
+
+Pass `evented-viewport` an options object with `debounce` and `emitter` properties:
+
+```javascript
+import knot from 'knot.js'
+import viewport from 'evented-viewport'
+
+// have your emitter handy (create or import one)
+const emitter = knot()
+
+// define your options
+const options = {
+  debounce: 250,          // time, in ms, that must pass before updating the viewport width/height when resizing
+  emitter                 // object with an "emit" method
+}
+
+// create an instance (should be a singleton)
+const instance = viewport(options)
+
+// export and enjoy in other modules
+export default instance
+```
+
+## See Also
+
+* [knot.js](https://github.com/callmecavs/knot.js) - A browser-based event emitter, for tying things together.
 
 ## License
 
