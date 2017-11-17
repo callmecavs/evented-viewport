@@ -21,10 +21,9 @@ const emitter = knot()
 
 // (optionally) subscribe to the resize event
 // note that all handlers will be passed an object containing the viewport width/height
-emitter.on('resize', viewport => {
-  console.log(`width: ${ viewport.width }`)
-  console.log(`height: ${ viewport.height }`)
-})
+emitter
+  .on('resize', viewport => console.log(`width: ${ viewport.width }`))
+  .on('resize', viewport => console.log(`height: ${ viewport.height }`))
 
 // define your options
 const options = {
