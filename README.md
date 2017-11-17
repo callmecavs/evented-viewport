@@ -19,16 +19,23 @@ import viewport from 'evented-viewport'
 // have your emitter handy (create or import one)
 const emitter = knot()
 
+// (optionally) subscribe to the resize event
+// note that all handlers will be passed an object containing the viewport width/height
+emitter.on('resize', viewport => {
+  console.log(`width: ${ viewport.width }`)
+  console.log(`height: ${ viewport.height }`)
+})
+
 // define your options
 const options = {
-  debounce: 250,          // time, in ms, that must pass before updating the viewport width/height when resizing
+  debounce: 250,          // time, in ms, that must pass before updating the viewport width/height on resize
   emitter                 // object with an "emit" method
 }
 
 // create an instance (should be a singleton)
 const instance = viewport(options)
 
-// export and enjoy in other modules
+// export (and enjoy in other modules)
 export default instance
 ```
 
