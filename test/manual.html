@@ -7,10 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
+    <script src="https://unpkg.com/knot.js"></script>
     <script src="../dist/evented-viewport.js"></script>
     <script>
       console.log('Module assigned to window.EventedViewport. Logged below:')
       console.log(EventedViewport)
+
+      var emitter = Knot()
+
+      emitter.on('resize', cache => console.log(cache))
+
+      var instance = EventedViewport({
+        debounce: 250,
+        emitter: emitter
+      })
     </script>
   </body>
 </html>
